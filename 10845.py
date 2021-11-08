@@ -6,8 +6,8 @@ Do = [input().split() for i in range(N)]
 
 que = []
 
+# [['push', '1']
 for i in Do:
-    # [['push', '1']
     if i[0] == 'push':
         que.insert(0, i[1])
     elif i[0] == 'front':
