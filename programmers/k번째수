@@ -1,0 +1,15 @@
+def solution(array, commands):
+    answer = []
+    
+    for i in commands:
+        a = i[0];
+        b = i[1];
+        c = i[2];
+        
+        d = array[a-1 : b];
+        d.sort();
+        e = (d[c-1]);
+        answer.append(e);
+        
+    return answer
+    
