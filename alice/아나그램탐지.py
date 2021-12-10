@@ -44,10 +44,10 @@ def isAnagram(str1, str2):
     
     
 
-
 def main():
     print(isAnagram('iamlordvoldemort', 'tommarvoloriddle')) # should return True
     print(isAnagram('cat', 'cap')) #should return False
     
 
-if __name__ == "
+if __name__ == "__main__":
+    main()
