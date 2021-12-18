@@ -3,9 +3,6 @@
 # ex. 4 2 => 1 2 3 
 # 4개중에 중복없이 2개 고른 것
 
-import sys
-
-N, M = map(int, sys.stdin.readline().split())
 
 # def BT(index, letter):
 #     num = array[index]
@@ -26,6 +23,9 @@ N, M = map(int, sys.stdin.readline().split())
 #     array += i 
 # # [1,2,3,4]
 
+import sys
+
+N, M = map(int, sys.stdin.readline().split())
 
 result = []
 #[1,2]
