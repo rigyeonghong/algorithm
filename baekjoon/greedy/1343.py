@@ -1,16 +1,18 @@
 import sys
 data = sys.stdin.readline().strip().split(".")
-result = []
+can = True
 
-for i in data:
-    #4로 나눈 나머지가 0이면 몫* AAAA
-    if len(i) % 4 ==0:
-        result.append(len(i)//4 * 'AAAA')
-    elif len(i) % 4 ==2:
-        result.append(len(i)//4 * 'AAAA' + len(i)%4//2 * 'BB')
-    else:
-        print(-1)
-        exit()
+for i in range(len(data)):
+    if data[i] == '':
+        continue
+    elif len(data[i]) % 2 == 1:
+        can = False
+        break
+    aaaa = len(data[i]) // 4
+    bb = (len(data[i]) -(aaaa * 4)) // 2
+    data[i] = aaaa * 'AAAA' + bb * 'BB'
 
-output = ".".join(result)
-print(output)
+if can:
+    print('.'.join(data))
+else:
+    print(-1)
