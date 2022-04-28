@@ -19,7 +19,7 @@
 | 13 | Backtracking | 백트래킹 | 0 | 75 |  |
 | 14 | Divide and conquer | 분할정복 | 0 | 18 |  |
 | 15 | Prefix Sum | 누적 합 | 0 | 32 |  |
-| 16 | String | 문자열 | 63 |  |
+| 16 | String | 문자열 |  1  | 63 |  |
 | 17 | Shortest Path | 최단거리 | 0 | 53 |  |
 | 18 | Topological Sorting | 위상정렬 | 0 | 14 |  |
 | 19 | Disjoint Set | 분리 집합 | 0 | 20 |  |
