@@ -13,7 +13,6 @@ for i in range(1, N+1):
 answer = 1000000000
 for line in com:
     for each in line:
-        print(each)
         s = 1
         b = 0
         for e in each:
@@ -21,4 +20,4 @@ for line in com:
             b += e[1]
         answer = min(answer, abs(s-b))
 
-# print(answer)
+print(answer)
