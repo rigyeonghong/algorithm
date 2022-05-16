@@ -3,20 +3,23 @@ import sys
 N, M = map(int, sys.stdin.readline().split())
 data = sorted(list(map(int, sys.stdin.readline().split())))
 
-visited = [False]*n
+visited = [False]*N
 pick = []
 
-def find(i, depth):
-    if depth == M:
+def find():
+    if len(pick) == M:
         print(*pick)
         return
     
-    for j in range(i+1, N):
-        pick.append(data[j])
-        find(j, depth+1)
-        pick.pop()
+    remember_me = 0
 
-for i in range(N):
-    pick.append(data[i])
-    find(i, 1)
-    pick.pop()
+    for i in range(N):
+        if not visited[i] and remember_me != data[i]:
+            visited[i] = True
+            pick.append(data[i])
+            remember_me = data[i]
+            find()
+            visited[i] = False
+            pick.pop()
+
+find()
