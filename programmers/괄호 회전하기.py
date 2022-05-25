@@ -1,24 +1,24 @@
-def solution(s):
-    answer = 0
-    tmp = list(s)
-
-    for _ in range(len(s)):
-
-        st = []
-        for i in range(len(tmp)):
-            if len(st) > 0 :
-                if st[-1] == '[' and tmp[i] == ']':
-                    st.pop()
-                elif st[-1] == '(' and tmp[i] == ')':
-                    st.pop()
-                elif st[-1] == '{' and tmp[i] == '}':
-                    st.pop()
-                else:
-                    st.append(tmp[i])
-            else:
-                st.append(tmp[i])
-        if len(st) == 0:
-            answer += 1
-        tmp.append(tmp.pop(0))
+def is_correct(s):    
+    partner = {"}":"{","]":"[",")":"("}
     
-    return answer
+    if s[0] in partner.keys():
+        return False
+    else:
+        stack = []
+        for element in s:
+            if element in partner.keys() and stack:
+                if partner[element] != stack.pop():
+                    return False
+            else:
+                stack.append(element)
+                    
+    return True if not stack else False
+
+def solution(s):    
+    count = 0
+    
+    for i in range(len(s)):
+        if is_correct(s[i:] + s[:i]):
+            count += 1
+            
+    return count
