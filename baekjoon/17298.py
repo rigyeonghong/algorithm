@@ -1,16 +1,16 @@
 from collections import deque
+import sys
 
-n = int(input())
-inputValue = list(map(int, input().split()))
+n = int(sys.stdin.readline())
+A = list(map(int, sys.stdin.readline().split()))
 
 oh_big = [-1] * n
-que = deque()
+stack = deque()
 
 for i in range(n):
-    while que and (que[-1][0] < inputValue[i]):
-        tmp, idx = que.pop()
-        oh_big[idx] = inputValue[i]
-    que.append([inputValue[i],i])
-
+    while stack and (A[stack[-1]] < A[i]):
+        idx = stack.pop()
+        oh_big[idx] = A[i]
+    stack.append(i)
+    
 print(*oh_big)
-
