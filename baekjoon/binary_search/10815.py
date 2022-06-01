@@ -21,21 +21,3 @@ for i in range(m):
         print(1, end=' ')
     else:
         print(0, end=' ')
-
-
-'''
-    if c == card[0] or card[-1]:
-        answer.append(1)
-        break
-    else:
-        l, r = 0, n
-        while r >= l:
-            mid = (l+r) //2
-            if c == card[mid]:
-                answer.append(1)
-                break
-            elif c < card[mid]:
-                l = mid +1
-            elif c > card[mid]:
-                r = mid -1
-'''
