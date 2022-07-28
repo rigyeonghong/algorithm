@@ -36,28 +36,26 @@ def solution(cacheSize, cities):
     if cacheSize == 0:
         return len(cities) * 5
     
-    upper_cities = []
-    for c in cities:
-        upper_cities.append(c.upper())
-    cache = [upper_cities[0]]
+    cache = [cities[0].lower()]
     
-    for i in range(1, len(upper_cities)):
+    for i in range(1, len(cities)):
+        c = cities[i].lower()
         if len(cache) < cacheSize:
-            if upper_cities[i] in cache:
+            if c in cache:
                 time += 1
-                cache.remove(upper_cities[i])
-                cache.append(upper_cities[i])
+                cache.remove(c)
+                cache.append(c)
             else:
-                cache.append(upper_cities[i])
+                cache.append(c)
                 time += 5
         else:
-            if upper_cities[i] in cache:
+            if c in cache:
                 time += 1
-                cache.remove(upper_cities[i])
-                cache.append(upper_cities[i])
+                cache.remove(c)
+                cache.append(c)
             else:
                 cache.pop(0)
-                cache.append(upper_cities[i])
+                cache.append(c)
                 time += 5   
     return time + 5
 
