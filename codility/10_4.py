@@ -70,7 +70,7 @@ def solution(A):
         else:
             return len(peak)
 
-#ref
+#ref O(N * log(log(N)))
 def solution(A):
     peaks = []
     
